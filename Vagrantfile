@@ -10,7 +10,31 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "chef/ubuntu-13.10"
+ 
+  # config.vm.box = "chef/ubuntu-13.10"
+  
+  # リポジトリ集約サーバ mountain の定義
+  config.vm.define :mountain |mt| do
+  
+    mt.vm.network :private_network, ip: "192.168.100.10"
+    
+  end
+
+  # 自動構築テスト環境 dr1 の定義
+  config.vm.define :dr1 |dr| do
+  
+    dr.vm.network :private_network, ip: "192.168.100.11"
+    
+  end
+
+  # 手動実行テスト環境 worktable の定義
+  config.vm.define :worktable |mt| do
+  
+    mt.vm.network :private_network, ip: "192.168.100.20"
+    
+  end
+
+  
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
