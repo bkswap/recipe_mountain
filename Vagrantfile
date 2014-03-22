@@ -14,14 +14,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.box = "chef/ubuntu-13.10"
   
   # リポジトリ集約サーバ mountain の定義
-  config.vm.define :mountain |mt| do
+  config.vm.define :mountain do |mt|
     mt.vm.box = "chef/ubuntu-13.10"
     mt.vm.network :private_network, ip: "192.168.100.10"
     
   end
 
   # 自動構築テスト環境 dr1 の定義
-  config.vm.define :dr1 |dr| do
+  config.vm.define :dr1 do |dr|
   
     dr.vm.box = "chef/ubuntu-13.10"
     dr.vm.network :private_network, ip: "192.168.100.11"
@@ -29,7 +29,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   # 手動実行テスト環境 worktable の定義
-  config.vm.define :worktable |table| do
+  config.vm.define :worktable do |table|
   
     table.vm.box = "chef/ubuntu-13.10"
     table.vm.network :private_network, ip: "192.168.100.20"
