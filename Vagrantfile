@@ -36,7 +36,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     
   end
 
-  
+  config.vm.boot_timeout = 1200 
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
