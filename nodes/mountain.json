@@ -1,4 +1,12 @@
-{"run_list":[
-  "git" ,
-  "jenkins"
-]}
+{
+
+  "jenkins": {
+    "port" : 8001
+  },
+
+  "run_list":[
+    "git" ,
+    "jenkins"
+  ]
+
+}
