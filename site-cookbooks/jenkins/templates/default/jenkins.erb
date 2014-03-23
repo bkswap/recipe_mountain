@@ -48,10 +48,10 @@ HTTP_PORT=<%= node['jenkins']['port'] %>
 AJP_PORT=-1
 
 # Listen address for HTTP connector
-HTTP_HOST=127.0.0.1
+HTTP_HOST=<%= node[:ipaddress] %>
 
 # Listen address for AJP connector
-AJP_HOST=127.0.0.1
+AJP_HOST=<%= node[:ipaddress] %>
 
 # arguments to pass to jenkins.
 # --javahome=$JAVA_HOME
