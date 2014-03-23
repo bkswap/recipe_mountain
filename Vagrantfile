@@ -18,9 +18,21 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     mt.vm.box = "chef/ubuntu-13.10"
     mt.vm.network :private_network, ip: "192.168.100.10"
     mt.vm.network :forwarded_port, host: "8081", guest: "8001"    
-  end
+  
+  #  mt.vm.provision "chef_solo" do |chef|
+  #    chef.cookbooks_path = "site-cookbooks"
+  #   chef.roles_path = "../my-recipes/roles"
+  #   chef.data_bags_path = "../my-recipes/data_bags"
+  #   chef.add_recipe "mysql"
+  #   chef.add_role "web"
+  #
+  #   # You may also specify custom JSON attributes:
+  #   chef.json = { :mysql_password => "foo" }
+  #  end
 
-  # 自動構築テスト環境 dr1 の定義
+end
+
+# 自動構築テスト環境 dr1 の定義
   config.vm.define :dr1 do |dr|
   
     dr.vm.box = "chef/ubuntu-13.10"

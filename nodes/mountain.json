@@ -5,6 +5,7 @@
   },
 
   "run_list":[
+    "japanese_locale",
     "git" ,
     "jenkins"
   ]
