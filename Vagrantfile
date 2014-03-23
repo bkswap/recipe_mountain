@@ -17,7 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define :mountain do |mt|
     mt.vm.box = "chef/ubuntu-13.10"
     mt.vm.network :private_network, ip: "192.168.100.10"
-    
+    mt.vm.network :forwarded_port, host: "8081", guest: "8001"    
   end
 
   # 自動構築テスト環境 dr1 の定義
